@@ -4,8 +4,8 @@
 # Compiled binaries / build output.
 /bin/
 *.exe
-ticket-system
-server
+/ticket-system
+/server
 
 # Go test & coverage artifacts.
 *.out
