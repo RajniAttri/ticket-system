@@ -1,0 +1,16 @@
+# Local environment file with secrets — never commit this.
+.env
+
+# Compiled binaries / build output.
+/bin/
+*.exe
+ticket-system
+server
+
+# Go test & coverage artifacts.
+*.out
+coverage.*
+
+# OS / editor noise.
+.DS_Store
+Thumbs.db
