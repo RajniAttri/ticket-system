@@ -168,15 +168,10 @@ func (h *TicketHandler) UpdateStatus(w http.ResponseWriter, r *http.Request) {
 
 // --- shared ticket helpers ---
 
-// loadOwnedTicket fetches a ticket and verifies the caller owns it.
-//
-// It deliberately returns ErrNotFound for BOTH "no such ticket" and "exists but
-// owned by someone else", so the API never reveals that another user's ticket
-// id exists. This is the core ownership-authorization check.
 func (h *TicketHandler) loadOwnedTicket(id, userID string) (*models.Ticket, error) {
 	ticket, err := h.store.GetTicketByID(id)
 	if err != nil {
-		return nil, err // ErrNotFound bubbles up
+		return nil, err 
 	}
 	if ticket.OwnerID != userID {
 		return nil, store.ErrNotFound

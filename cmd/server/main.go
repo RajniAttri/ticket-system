@@ -11,7 +11,7 @@ import (
 )
 
 func main() {
-	
+
 	cfg := config.Load()
 
 	db := store.NewInMemoryStore()
